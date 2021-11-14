@@ -1,0 +1,12 @@
+{
+  "name": "Fundamentals-React",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Leonardo-Madeira/Fundamentals-React.git",
+  "author": "Leonardo Madeira <leomadeiraa@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
