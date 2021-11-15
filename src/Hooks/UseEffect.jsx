@@ -10,24 +10,24 @@
 
 // Exemplo:
 // Use setTimeout()para contar 1 segundo após a renderização inicial:
-{
+
 
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-function Timer() {
+export function Timer() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       setCount((count) => count + 1);
-    }, 1000);
+    }, 1000); // 1000 é 1s ou seja a cada 1s count vai receber +1
   });
 
   return <h1>I've rendered {count} times!</h1>;
 }
 
-}
+
 
 // ReactDOM.render(<Timer />, document.getElementById('root'));
 
@@ -39,17 +39,17 @@ function Timer() {
 
 // Devemos sempre incluir o segundo parâmetro que aceita uma matriz. Podemos, opcionalmente, passar dependências para useEffectnesta matriz.
 
-{
+
 // 1. Nenhuma dependência aprovada:
-useEffect(() => { /*Runs on every render */ });
+//useEffect(() => { /*Runs on every render */ });
 
 // 2. Uma matriz vazia:
-useEffect(() => { /*Runs only on the first render */ }, []);
+//useEffect(() => { /*Runs only on the first render */ }, []);
 
 // 3. Suportes ou valores de estado:
-useEffect(() => { /*Runs on the first render*/ /*And any time any dependency value changes*/ }, [prop, state]);
+//useEffect(() => { /*Runs on the first render*/ /*And any time any dependency value changes*/ }, [prop, state]);
 
-}
+
 
 // Portanto, para corrigir esse problema, vamos apenas executar esse efeito na renderização inicial.
 
@@ -57,33 +57,33 @@ useEffect(() => { /*Runs on the first render*/ /*And any time any dependency val
 // Execute o efeito apenas na renderização inicial:
 
 
-{
-    import { useState, useEffect } from "react";
-    import ReactDOM from "react-dom";
+
+// import { useState, useEffect } from "react";
+// import ReactDOM from "react-dom";
+
+export function Timer2() {
+     const [count, setCount] = useState(0);
     
-    function Timer() {
-      const [count, setCount] = useState(0);
+     useEffect(() => {
+       setTimeout(() => {
+         setCount((count) => count + 1);
+       }, 1000);
+     }, []); // <- add empty brackets here
     
-      useEffect(() => {
-        setTimeout(() => {
-          setCount((count) => count + 1);
-    }, 1000);
-}, []); // <- add empty brackets here
-    
-return <h1>I've rendered {count} times!</h1>;
+ return <h1>I've rendered {count} times!</h1>;
 }
 
 //ReactDOM.render(<Timer />, document.getElementById('root'));
-}
+
 
 // Exemplo:
 // Aqui está um exemplo de um useEffectGancho que depende de uma variável. Se a countvariável for atualizada, o efeito será executado novamente:
 
-{
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 
-function Counter() {
+// import { useState, useEffect } from "react";
+// import ReactDOM from "react-dom";
+
+export function Counter() {
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
 
@@ -92,15 +92,13 @@ function Counter() {
   }, [count]); // <- add the count variable here
 
   return (
-    <>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount((c) => c + 1)}>+</button>
-      <p>Calculation: {calculation}</p>
-    </>
+      <>
+       <p>Count: {count}</p>
+       <button onClick={() => setCount((c) => c + 1)}>+</button>
+       <p>Calculation: {calculation}</p>
+     </>
   );
-}
-
-// ReactDOM.render(<Counter />, document.getElementById('root'));
+// // ReactDOM.render(<Counter />, document.getElementById('root'));
 }
 
 //Se houver várias dependências, elas devem ser incluídas na useEffectmatriz de dependência.
@@ -115,24 +113,24 @@ function Counter() {
 // Exemplo:
 // Limpe o cronômetro no final do useEffectgancho:
 
-{
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 
-function Timer() {
+// import { useState, useEffect } from "react";
+// import ReactDOM from "react-dom";
+
+export function Timer3() {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
+   useEffect(() => {
     let timer = setTimeout(() => {
-    setCount((count) => count + 1);
-  }, 1000);
+     setCount((count) => count + 1);
+   }, 1000);
 
-  return () => clearTimeout(timer)
-  }, []);
+   return () => clearTimeout(timer)
+   }, []);
 
-  return <h1>I've rendered {count} times!</h1>;
-}
-}
-// ReactDOM.render(<Timer />, document.getElementById("root"));
+   return <h1>I've rendered {count} times!</h1>;
+ }
+
+ //ReactDOM.render(<Timer />, document.getElementById("root"));
 
 // Nota: para limpar o cronômetro, tivemos que nomeá-lo.
