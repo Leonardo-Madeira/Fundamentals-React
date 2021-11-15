@@ -22,9 +22,9 @@ import { useState } from "react";
 // Exemplo:
 // Estado de inicialização na parte superior do componente de função.
 
-import { useState } from "react";
+//import { useState } from "react";
 
-function FavoriteColor() {
+function FavoriteColor1() {
   const [color, setColor] = useState("");
 }
 // Observe que, novamente, estamos desestruturando os valores retornados de useState.
@@ -44,10 +44,10 @@ function FavoriteColor() {
 // Exemplo:
 // Use a variável de estado no componente renderizado.
 
-import { useState } from "react";
+//import { useState } from "react";
 import ReactDOM from "react-dom";
 
-function FavoriteColor() {
+function FavoriteColor2() {
   const [color, setColor] = useState("red");
 
   return <h1>My favorite color is {color}!</h1>
@@ -63,10 +63,10 @@ function FavoriteColor() {
 // # Exemplo:
 // Use um botão para atualizar o estado:
 
-import { useState } from "react";
+//import { useState } from "react";
 import ReactDOM from "react-dom";
 
-function FavoriteColor() {
+function FavoriteColor3() {
   const [color, setColor] = useState("red");
 
   return (
@@ -89,7 +89,7 @@ function FavoriteColor() {
 
 // Exemplo:
 // Crie vários ganchos de estado:
-{ 
+
 import { useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -109,16 +109,16 @@ function Car() {
   )
 }
 
-ReactDOM.render(<Car />, document.getElementById('root'));
-}
+//ReactDOM.render(<Car />, document.getElementById('root'));
+
 
 // Ou podemos apenas usar um estado e incluir um objeto!
 
 // Exemplo:
 // Crie um único gancho que segure um objeto:
 
-{
-    import { useState } from "react";
+
+  //  import { useState } from "react";
     import ReactDOM from "react-dom";
 
     function Car() {
@@ -138,7 +138,7 @@ ReactDOM.render(<Car />, document.getElementById('root'));
         </>
     )
     }
-}
+
 // ReactDOM.render(<Car />, document.getElementById('root'));
 
 // Como agora estamos rastreando um único objeto, precisamos fazer referência a esse objeto e, em seguida, à propriedade desse objeto ao renderizar o componente. (Ex: car.brand)
@@ -155,8 +155,8 @@ ReactDOM.render(<Car />, document.getElementById('root'));
 // Exemplo:
 // Use o operador JavaScript spread para atualizar apenas a cor do carro:
 
-{
-import { useState } from "react";
+
+//import { useState } from "react";
 import ReactDOM from "react-dom";
 
 function Car() {
@@ -188,7 +188,7 @@ function Car() {
 }
 
 // ReactDOM.render(<Car />, document.getElementById('root'));
-}
+
 
 // Como precisamos do valor atual de estado, passamos uma função para nossa setCarfunção. Esta função recebe o valor anterior.
 
