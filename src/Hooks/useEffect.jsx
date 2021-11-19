@@ -11,7 +11,6 @@
 // Exemplo:
 // Use setTimeout()para contar 1 segundo após a renderização inicial:
 
-
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
@@ -26,8 +25,6 @@ export function Timer() {
 
   return <h1>I've rendered {count} times!</h1>;
 }
-
-
 
 // ReactDOM.render(<Timer />, document.getElementById('root'));
 
@@ -50,12 +47,10 @@ export function Timer() {
 //useEffect(() => { /*Runs on the first render*/ /*And any time any dependency value changes*/ }, [prop, state]);
 
 
-
 // Portanto, para corrigir esse problema, vamos apenas executar esse efeito na renderização inicial.
 
 // Exemplo:
 // Execute o efeito apenas na renderização inicial:
-
 
 
 // import { useState, useEffect } from "react";
@@ -75,10 +70,8 @@ export function Timer2() {
 
 //ReactDOM.render(<Timer />, document.getElementById('root'));
 
-
 // Exemplo:
 // Aqui está um exemplo de um useEffectGancho que depende de uma variável. Se a countvariável for atualizada, o efeito será executado novamente:
-
 
 // import { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
