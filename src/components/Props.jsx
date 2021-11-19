@@ -45,7 +45,7 @@ function Garage1() {
 
 // Se você tem uma variável para enviar, e não uma string como no exemplo acima, basta colocar o nome da variável entre chaves:
 
-// Exemplo
+// Exemplo:
 // Crie uma variável chamada carNamee envie-a ao Carcomponente:
 
 function Car4(props) {
@@ -80,7 +80,7 @@ function Car(props) {
     );
   }
   
-  ReactDOM.render(<Garage />, document.getElementById('root'));
-
-  
-
+ReactDOM.render(
+    <Garage />,
+    document.getElementById('root')
+);
